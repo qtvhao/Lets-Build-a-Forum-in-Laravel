@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Reply;
 use App\Thread;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -11,6 +12,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
  * @property Thread thread
  */
 class ThreadTest extends TestCase {
+	use DatabaseMigrations;
 	/** @test */
 	public function test_a_user_can_view_all_threads() {
 		$response = $this->get( '/threads' );
